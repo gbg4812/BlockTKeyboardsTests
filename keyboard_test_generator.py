@@ -16,7 +16,7 @@ for i in range(n):
     time = random.randint(30, 120)
     cpywords = words.copy()
 
-    with open(f"id{i}_{time}s.csv", "w") as out:
+    with open(f"id{i}_{time}s.txt", "w") as out:
         while len(cpywords) != 0:
             out.write(cpywords.pop(random.randint(0, len(cpywords) - 1)))
             out.write(" ")
