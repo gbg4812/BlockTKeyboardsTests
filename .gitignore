@@ -1,1 +1,3 @@
 id*s.txt
+.venv/
+__pycache__/
