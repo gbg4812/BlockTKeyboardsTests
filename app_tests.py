@@ -71,7 +71,6 @@ class TextPrompter(QObject):
 
     @pyqtSlot(str)
     def update_current_word(self, text: str):
-        print(f"updating current word! text: |{text}| == |{self.txt[self.current]}|")
         if not self.test_timer.isActive():
             self.test_timer.start(self.test_time * 1000)
 
@@ -100,7 +99,7 @@ class TextPrompter(QObject):
         for wrd in self.txt[: self.current]:
             characters += len(wrd)
         wpm = float(self.current / float(self.test_time)) * 60.0
-        ccpm = float(characters / float(self.test_time)) * 60.0
+        ccpm = int(float(characters / float(self.test_time)) * 60.0)
         self.label.setText(
             f"Finished! WPM: {wpm}\nYou have writen {self.current} correct words!\nCCPM: {ccpm}"
         )
